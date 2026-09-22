@@ -16,7 +16,11 @@ function norm(value) {
   return String(value ?? "")
     .trim()
     .toLowerCase()
-    .replaceAll("ك", "ک");
+    // Каф: ك = ک
+    // Йа/я: ى = ي = ی
+    .replaceAll("ك", "ک")
+    .replaceAll("ى", "ي")
+    .replaceAll("ی", "ي");
 }
 
 function esc(value) {
